@@ -46,6 +46,7 @@ interface ArenaData {
   };
   status: 'verified' | 'in-arena';
   verificationStatus: string; // 原始的验证状态文字（已验证/验证中）
+  hasContent: boolean;
 }
 
 // Category mapping (Chinese to English)
