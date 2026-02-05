@@ -32,7 +32,7 @@ export default function BackgroundPreviewClient() {
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               }`}
             >
-              {getEffectName(effect)}
+              {getEffectName(effect, isChina)}
             </button>
           ))}
         </div>
