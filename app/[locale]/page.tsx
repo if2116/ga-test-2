@@ -414,19 +414,15 @@ async function ValuePropSection({ locale }: { locale: string }) {
 
       <div className="relative grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 border-x border-white/10">
         {valueProps.map((prop, idx) => (
-          <div key={idx} className="relative group p-8 md:p-10 flex flex-col items-center text-center transition-all hover:bg-white/[0.02] overflow-hidden">
+          <div key={idx} className="relative group p-8 md:p-10 flex flex-col items-center justify-center text-center transition-all hover:bg-white/[0.02] overflow-hidden">
 
             {/* Shine effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
 
             {/* Watermark Number */}
-            <div className="absolute top-6 right-6 text-[100px] leading-none font-bold text-white/[0.03] select-none font-mono tracking-tighter group-hover:text-blue-500/[0.08] transition-colors duration-500">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[100px] leading-none font-bold text-white/[0.03] select-none font-mono tracking-tighter group-hover:text-blue-500/[0.08] transition-colors duration-500 pointer-events-none">
               0{idx + 1}
             </div>
-
-            {/* Corner Markers */}
-            <div className="absolute -bottom-[5px] -right-[5px] text-white/20 font-thin select-none group-hover:text-blue-500/40 transition-colors duration-300">+</div>
-            {idx === 0 && <div className="absolute -bottom-[5px] -left-[5px] text-white/20 font-thin select-none group-hover:text-blue-500/40 transition-colors duration-300">+</div>}
 
             {/* Icon - Larger with enhanced hover effects */}
             <div className="relative z-10 mb-8">

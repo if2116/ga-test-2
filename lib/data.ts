@@ -22,14 +22,14 @@ export const industries = {
 };
 
 // Arena data - auto-generated from List of Arenas.xlsx
-// Last updated: 2026-02-02T09:06:08.774Z
+// Last updated: 2026-02-04T11:30:16.769Z
 export const arenas: Arena[] = [
   {
     id: '智能调研报告生成',
     folderId: '1-intelligent-research-system',
     title: {
       zh: '智能调研报告生成',
-      en: 'Intelligent Research Report Generation',
+      en: 'Enterprise-Level Intelligent Research Report Generation System Demo',
     },
     category: '服务,运营,管理',
     categoryEn: 'Service, Operations, Management',
@@ -38,6 +38,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：Claude Code + GLM 4.7 + Metaso',
     championEn: 'Private Deployment: Claude Code + GLM 4.7 + Metaso',
+    challenger: '私部署版：Claude Code + Kimi K2.5 + Metaso',
+    challengerEn: 'Private Deployment: Claude Code + Kimi K2.5 + Metaso',
     highlights: '一周构建1个包含资料搜集、知识整合、报告生成功能的智能调研系统Demo',
     highlightsEn: 'Build an intelligent research system demo with data collection, knowledge integration, and report generation capabilities in one week',
     metrics: {
@@ -46,15 +48,14 @@ export const arenas: Arena[] = [
       security: '较高',
       cost: '较优',
     },
-    videoFile: '1-intelligent-research-system.mp4',
     hasContent: true,
   },
   {
     id: '业务看板搭建',
-    folderId: 'business-dashboard-builder',
+    folderId: '2-business-dashboard-website',
     title: {
       zh: '业务看板搭建',
-      en: 'Business Dashboard Builder',
+      en: 'Business Dashboard & Website Demo',
     },
     category: '服务,运营,营销',
     categoryEn: 'Service, Operations, Marketing',
@@ -63,6 +64,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '云端版：Lovable + GLM 4.7 + Claude Code',
     championEn: 'Cloud Version: Lovable + GLM 4.7 + Claude Code',
+    challenger: '云端版：Lovable + Kimi K2.5 + Claude Code',
+    challengerEn: 'Cloud Version: Lovable + Kimi K2.5 + Claude Code',
     highlights: '0技术门槛1-2日内搭建出1个有基础互动能力的业务看板或网站Demo',
     highlightsEn: 'Build a business dashboard or website demo with basic interactive capabilities in 1-2 days with zero technical threshold',
     metrics: {
@@ -71,15 +74,14 @@ export const arenas: Arena[] = [
       security: '较低',
       cost: '较优',
     },
-    videoFile: '2-business-dashboard-website.mp4',
     hasContent: false,
   },
   {
     id: '文档审核与风控',
-    folderId: 'document-review-risk-control',
+    folderId: '3-document-review-risk-control',
     title: {
       zh: '文档审核与风控',
-      en: 'Document Review and Risk Control',
+      en: 'Document Review & Risk Control Demo',
     },
     category: '风控,管理,运营',
     categoryEn: 'Risk Control, Management, Operations',
@@ -88,6 +90,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：LangChain + GLM 4.7 + Pydantic + unstructured + Faiss',
     championEn: 'Private Deployment: LangChain + GLM 4.7 + Pydantic + unstructured + Faiss',
+    challenger: '私部署版：LangChain + Kimi K2.5 + Pydantic + unstructured + Faiss',
+    challengerEn: 'Private Deployment: LangChain + Kimi K2.5 + Pydantic + unstructured + Faiss',
     highlights: '一周构建1个完整性检查与风险评估的文档解析系统Demo',
     highlightsEn: 'Build a document parsing system demo with completeness checks and risk assessment in one week',
     metrics: {
@@ -96,15 +100,14 @@ export const arenas: Arena[] = [
       security: '较高',
       cost: '较优',
     },
-    videoFile: '3-document-review-risk-control.mp4',
     hasContent: false,
   },
   {
     id: '企业演示视频',
-    folderId: 'enterprise-demo-video-production',
+    folderId: 'enterprise-demo-video',
     title: {
       zh: '企业演示视频',
-      en: 'Enterprise Demo Video Production',
+      en: 'Enterprise Demo Video',
     },
     category: '服务,营销',
     categoryEn: 'Service, Marketing',
@@ -113,6 +116,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：Claude Code + GLM 4.7 + FFmpeg + FunASR + PaddleSpeech',
     championEn: 'Private Deployment: Claude Code + GLM 4.7 + FFmpeg + FunASR + PaddleSpeech',
+    challenger: '私部署版：Claude Code + Kimi K2.5 + FFmpeg + FunASR + PaddleSpeech',
+    challengerEn: 'Private Deployment: Claude Code + Kimi K2.5 + FFmpeg + FunASR + PaddleSpeech',
     highlights: '最快2.5日内生成1个企业级产品或功能简要演示视频',
     highlightsEn: 'Generate an enterprise-level product or feature demo video within 2.5 days at fastest',
     metrics: {
@@ -125,10 +130,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '儿童教育趣味应用',
-    folderId: 'childrens-educational-app',
+    folderId: '5-educational-app-children',
     title: {
       zh: '儿童教育趣味应用',
-      en: 'Children\'s Educational Application',
+      en: 'Educational App for Children Demo',
     },
     category: '服务',
     categoryEn: 'Service',
@@ -137,6 +142,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：BISHENG + GLM 4.7',
     championEn: 'Private Deployment: BISHENG + GLM 4.7',
+    challenger: '私部署版：BISHENG + Kimi K2.5 ',
+    challengerEn: 'Private Deployment: BISHENG + Kimi K2.5 ',
     highlights: '一周搭建一个儿童教育应用Demo',
     highlightsEn: 'Build a children\'s education app demo in one week',
     metrics: {
@@ -149,10 +156,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '长时间序列预测系统',
-    folderId: 'time-series-forecasting-system',
+    folderId: '6-time-series-forecasting-energy',
     title: {
       zh: '长时间序列预测系统',
-      en: 'Long-term Time Series Forecasting System',
+      en: 'Long-Term Time Series Forecasting System Demo (Energy)',
     },
     category: '运营,风控',
     categoryEn: 'Operations, Risk Control',
@@ -161,6 +168,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：Autogluon + Neuralforecast + EMTSF',
     championEn: 'Private Deployment: Autogluon + Neuralforecast + EMTSF',
+    challenger: '寻找攻擂者',
+    challengerEn: 'Looking for Challengers',
     highlights: '一周用低代码快速构建并验证一个面向能源领域的长时间序列预测系统Demo',
     highlightsEn: 'Rapidly build and verify a long-term time series forecasting system demo for the energy sector using low-code in one week',
     metrics: {
@@ -173,10 +182,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '智能文档翻译系统',
-    folderId: 'intelligent-document-translation',
+    folderId: '7-document-translation',
     title: {
       zh: '智能文档翻译系统',
-      en: 'Intelligent Document Translation System',
+      en: 'Intelligent Document Translation System Demo',
     },
     category: '服务,运营,管理',
     categoryEn: 'Service, Operations, Management',
@@ -185,6 +194,8 @@ export const arenas: Arena[] = [
     verificationStatus: '已验证',
     champion: '私部署版：Gemini CLI + Gemini 3 Pro',
     championEn: 'Private Deployment: Gemini CLI + Gemini 3 Pro',
+    challenger: '寻找攻擂者',
+    challengerEn: 'Looking for Challengers',
     highlights: '一周快速构建1个智能文档翻译Demo',
     highlightsEn: 'Rapidly build an intelligent document translation demo in one week',
     metrics: {
@@ -197,10 +208,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '智能合同法审系统',
-    folderId: 'intelligent-contract-legal-review',
+    folderId: 'intelligent-system',
     title: {
       zh: '智能合同法审系统',
-      en: 'Intelligent Contract Legal Review System',
+      en: 'Intelligent Contract Legal Review System Demo',
     },
     category: '风控',
     categoryEn: 'Risk Control',
@@ -209,6 +220,8 @@ export const arenas: Arena[] = [
     verificationStatus: '验证中',
     champion: '私部署版：BISHENG',
     championEn: 'Private Deployment: BISHENG',
+    challenger: '寻找攻擂者',
+    challengerEn: 'Looking for Challengers',
     highlights: '一天搭建出基于要素抽取与跨合同规则校验、可配置与溯源的智能合同法审系统Demo',
     highlightsEn: 'Build an intelligent contract legal review system demo with element extraction, cross-contract validation, configurability, and traceability in one day',
     metrics: {
@@ -221,10 +234,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '通用目标检测系统',
-    folderId: 'universal-object-detection',
+    folderId: 'system',
     title: {
       zh: '通用目标检测系统',
-      en: 'Universal Object Detection System',
+      en: 'Universal Object Detection System Demo',
     },
     category: '运营,管理,风控',
     categoryEn: 'Operations, Management, Risk Control',
@@ -232,7 +245,9 @@ export const arenas: Arena[] = [
     industryEn: 'Information Technology, Energy & Manufacturing, Agriculture, Forestry, Animal Husbandry & Fishery',
     verificationStatus: '验证中',
     champion: '私部署版：Ultralytics YOLO （YOLO 11）+ Triton + Perf Analyzer',
-    championEn: 'Private Deployment: Ultralytics YOLO (YOLO 11) + Triton + Perf Analyzer',
+    championEn: 'Private Deployment: Ultralytics YOLO (YOLO 11)+ Triton + Perf Analyzer',
+    challenger: '寻找攻擂者',
+    challengerEn: 'Looking for Challengers',
     highlights: '一周构建1个高精度、含数据流闭环、具备自进化能力的通用目标检测系统Demo',
     highlightsEn: 'Build a high-precision universal object detection system demo with closed-loop data flow and self-evolving capabilities in one week',
     metrics: {
@@ -241,13 +256,14 @@ export const arenas: Arena[] = [
       security: '较高',
       cost: '较优',
     },
+    hasContent: false,
   },
   {
     id: 'sql语言智能生成',
-    folderId: 'sql-intelligent-generation-nl2sql',
+    folderId: '10-nl2sql',
     title: {
       zh: 'SQL语言智能生成',
-      en: 'SQL Intelligent Generation (NL2SQL)',
+      en: 'Universal Practice of SQL Language Intelligent Generation (NL2SQL)',
     },
     category: '服务',
     categoryEn: 'Service',
@@ -255,7 +271,9 @@ export const arenas: Arena[] = [
     industryEn: 'Information Technology',
     verificationStatus: '验证中',
     champion: '私部署版：XiYan-SQL（QwenCoder-32B-2504）',
-    championEn: 'Private Deployment: XiYan-SQL (QwenCoder-32B-2504)',
+    championEn: 'Private Deployment: XiYan-SQL(QwenCoder-32B-2504)',
+    challenger: '寻找攻擂者',
+    challengerEn: 'Looking for Challengers',
     highlights: '快速搭建一个大模型，通过对话生成SQL脚本',
     highlightsEn: 'Rapidly build a large model that generates SQL scripts through conversation',
     metrics: {
@@ -268,10 +286,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '功能推荐助手',
-    folderId: 'feature-recommendation-assistant',
+    folderId: 'feature-recommendation-assistant-demo',
     title: {
       zh: '功能推荐助手',
-      en: 'Conversational Feature Recommendation Assistant',
+      en: 'Feature Recommendation Assistant Demo',
     },
     category: '服务,运营',
     categoryEn: 'Service, Operations',
@@ -280,6 +298,8 @@ export const arenas: Arena[] = [
     verificationStatus: '验证中',
     champion: '私部署版：Coze + GLM 4.7',
     championEn: 'Private Deployment: Coze + GLM 4.7',
+    challenger: '私部署版：Coze + Kimi K2.5 ',
+    challengerEn: 'Private Deployment: Coze + Kimi K2.5 ',
     highlights: '一周基于低代码构建一个具备主动追问与推荐能力的对话式助手Demo',
     highlightsEn: 'Build a conversational assistant demo with active questioning and recommendation capabilities using low-code in one week',
     metrics: {
@@ -292,10 +312,10 @@ export const arenas: Arena[] = [
   },
   {
     id: '智能信贷报告生成系统',
-    folderId: 'intelligent-credit-report-generation',
+    folderId: '12-credit-report',
     title: {
       zh: '智能信贷报告生成系统',
-      en: 'Intelligent Credit Report Generation System',
+      en: 'Intelligent Credit Report Generation System Demo',
     },
     category: '服务,运营',
     categoryEn: 'Service, Operations',
@@ -304,6 +324,8 @@ export const arenas: Arena[] = [
     verificationStatus: '验证中',
     champion: '私部署版：LangChain + GLM 4.7',
     championEn: 'Private Deployment: LangChain + GLM 4.7',
+    challenger: '私部署版：LangChain + Kimi K2.5 ',
+    challengerEn: 'Private Deployment: LangChain + Kimi K2.5 ',
     highlights: '一周低代码构建具备多源数据整合、合规校验、信贷报告一键生成能力的银行智能信贷系统Demo',
     highlightsEn: 'Build a banking intelligent credit system demo with multi-source data integration, compliance verification, and one-click credit report generation using low-code in one week',
     metrics: {
@@ -312,13 +334,14 @@ export const arenas: Arena[] = [
       security: '较高',
       cost: '较优',
     },
+    hasContent: false,
   },
   {
     id: '单条产业链图谱',
-    folderId: 'industrial-chain-knowledge-graph',
+    folderId: 'single',
     title: {
       zh: '单条产业链图谱',
-      en: 'Industrial Chain Knowledge Graph',
+      en: 'Single Industrial Chain Graph',
     },
     category: '服务,运营',
     categoryEn: 'Service, Operations',
@@ -327,6 +350,8 @@ export const arenas: Arena[] = [
     verificationStatus: '验证中',
     champion: '私部署版：LangChain + GLM 4.7',
     championEn: 'Private Deployment: LangChain + GLM 4.7',
+    challenger: '私部署版：LangChain + Kimi K2.5 ',
+    challengerEn: 'Private Deployment: LangChain + Kimi K2.5 ',
     highlights: '一周低代码完成单条全国产业链图谱全流程构建',
     highlightsEn: 'Complete the full-process construction of a single national industrial chain graph using low-code in one week',
     metrics: {

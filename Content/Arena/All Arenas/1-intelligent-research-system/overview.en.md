@@ -102,7 +102,7 @@ Build an intelligent research system demo with **data collection, knowledge inte
 #### 3.1.2 Version Basic Information
 
 **Practitioner Information**:
-- **Name**: Real-World AI Self-Developed and Verified
+- **Name**: Real-World AI Team
 
 **Original Author Information**:
 - **Chinese Name**: /
@@ -116,8 +116,8 @@ Build an intelligent research system demo with **data collection, knowledge inte
 
 **Version Status**:
 - **First Release Date**: 2025-11-20
-- **Last Update**: 2025-12-19
-- **Last Review**: 2025-12-23
+- **Last Update**: 2026-02-04
+- **Last Review**: 2026-02-04
 
 
 

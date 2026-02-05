@@ -22,7 +22,6 @@ __Participants__
 1. Proficient in using various chain-of-thought strategies, familiar with cutting-edge and popular open/closed source LLM resources, with own usage experience, summaries, and insights
 2. Proficient in NLP classic deep learning models (such as Transformer series, LLaMA series, GLM series, etc.) and related resources (websites, libraries, blogs, etc.); master at least one common deep learning development framework, such as PyTorch; maintain continuous attention and interest in the working principles and latest news of large-scale generative language models (LLMs) after GPT-3.5
 3. Proficient in Python language, able to use basic regular expressions and command-line scripts; familiar with NLP basic concepts and classic tasks (classification, matching, sequence labeling, generation, etc.); able to skillfully use common NLP open-source libraries (HanLP, LTP, Jieba, etc.)
-4. Proactive attitude, organized communication, curious and self-driven; can ensure working hours and attendance
 
 - Role Quantity: 1 person
 
@@ -316,7 +315,6 @@ __Participants__
 1. Proficient in using various chain-of-thought strategies, familiar with cutting-edge and popular open/closed source LLM resources, with own usage experience, summaries, and insights
 2. Proficient in NLP classic deep learning models (such as Transformer series, LLaMA series, GLM series, etc.) and related resources (websites, libraries, blogs, etc.); master at least one common deep learning development framework, such as PyTorch; maintain continuous attention and interest in the working principles and latest news of large-scale generative language models (LLMs) after GPT-3.5
 3. Proficient in Python language, able to use basic regular expressions and command-line scripts; familiar with NLP basic concepts and classic tasks (classification, matching, sequence labeling, generation, etc.); able to skillfully use common NLP open-source libraries (HanLP, LTP, Jieba, etc.)
-4. Proactive attitude, organized communication, curious and self-driven; can ensure working hours and attendance
 
 - Role Quantity: 1 person
 
@@ -393,7 +391,6 @@ __参与人员__
 1. 熟练使用多种思维链策略，对前沿与流行的开/闭源大模型资源较熟悉，有自己的使用经验、使用总结与心得
 2. 熟练掌握NLP经典深度学习模型（如Transformer系、LLaMA系、GLM系等）及相关资源（网站、库、博客等）；掌握至少一种常用深度学习开发框架，如PyTorch等；对GPT-3.5之后的大规模生成式语言模型（大模型）的工作原理和最新消息保持持续关注与兴趣
 3. 熟练掌握Python语言，会使用基本的正则表达式和命令行脚本；熟知NLP基础概念及经典任务（分类、匹配、序列标注、生成等）；能熟练运用常见NLP开源库（HanLP、LTP、Jieba等）
-4. 态度积极主动，沟通有条理，有好奇心与自驱力；能确保工作时长和到岗情况
 
 - 角色数量：1人
 
@@ -693,7 +690,6 @@ __参与人员__
 1. 熟练使用多种思维链策略，对前沿与流行的开/闭源大模型资源较熟悉，有自己的使用经验、使用总结与心得
 2. 熟练掌握NLP经典深度学习模型（如Transformer系、LLaMA系、GLM系等）及相关资源（网站、库、博客等）；掌握至少一种常用深度学习开发框架，如PyTorch等；对GPT-3.5之后的大规模生成式语言模型（大模型）的工作原理和最新消息保持持续关注与兴趣
 3. 熟练掌握Python语言，会使用基本的正则表达式和命令行脚本；熟知NLP基础概念及经典任务（分类、匹配、序列标注、生成等）；能熟练运用常见NLP开源库（HanLP、LTP、Jieba等）
-4. 态度积极主动，沟通有条理，有好奇心与自驱力；能确保工作时长和到岗情况
 
 - 角色数量：1人
 

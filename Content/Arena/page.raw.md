@@ -8,7 +8,7 @@ pageSubtitle: 为您的场景找到AI最佳实践
 ## Arena List Data
 
 > This file is auto-generated from List of Arenas.xlsx
-> Last updated: 2026-02-02T09:06:08.772Z
+> Last updated: 2026-02-04T11:30:16.767Z
 
 ### 1. 智能调研报告生成
 
@@ -18,6 +18,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 已验证
 
 **擂主**: 私部署版：Claude Code + GLM 4.7 + Metaso
+
+**攻擂中**: 私部署版：Claude Code + Kimi K2.5 + Metaso
 
 **亮点**: 一周构建1个包含资料搜集、知识整合、报告生成功能的智能调研系统Demo
 
@@ -37,6 +39,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 云端版：Lovable + GLM 4.7 + Claude Code
 
+**攻擂中**: 云端版：Lovable + Kimi K2.5 + Claude Code
+
 **亮点**: 0技术门槛1-2日内搭建出1个有基础互动能力的业务看板或网站Demo
 
 **Metrics**:
@@ -54,6 +58,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 已验证
 
 **擂主**: 私部署版：LangChain + GLM 4.7 + Pydantic + unstructured + Faiss
+
+**攻擂中**: 私部署版：LangChain + Kimi K2.5 + Pydantic + unstructured + Faiss
 
 **亮点**: 一周构建1个完整性检查与风险评估的文档解析系统Demo
 
@@ -73,6 +79,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 私部署版：Claude Code + GLM 4.7 + FFmpeg + FunASR + PaddleSpeech
 
+**攻擂中**: 私部署版：Claude Code + Kimi K2.5 + FFmpeg + FunASR + PaddleSpeech
+
 **亮点**: 最快2.5日内生成1个企业级产品或功能简要演示视频
 
 **Metrics**:
@@ -90,6 +98,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 已验证
 
 **擂主**: 私部署版：BISHENG + GLM 4.7
+
+**攻擂中**: 私部署版：BISHENG + Kimi K2.5 
 
 **亮点**: 一周搭建一个儿童教育应用Demo
 
@@ -109,6 +119,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 私部署版：Autogluon + Neuralforecast + EMTSF
 
+**攻擂中**: 寻找攻擂者
+
 **亮点**: 一周用低代码快速构建并验证一个面向能源领域的长时间序列预测系统Demo
 
 **Metrics**:
@@ -126,6 +138,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 已验证
 
 **擂主**: 私部署版：Gemini CLI + Gemini 3 Pro
+
+**攻擂中**: 寻找攻擂者
 
 **亮点**: 一周快速构建1个智能文档翻译Demo
 
@@ -145,6 +159,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 私部署版：BISHENG
 
+**攻擂中**: 寻找攻擂者
+
 **亮点**: 一天搭建出基于要素抽取与跨合同规则校验、可配置与溯源的智能合同法审系统Demo
 
 **Metrics**:
@@ -162,6 +178,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 验证中
 
 **擂主**: 私部署版：Ultralytics YOLO （YOLO 11）+ Triton + Perf Analyzer
+
+**攻擂中**: 寻找攻擂者
 
 **亮点**: 一周构建1个高精度、含数据流闭环、具备自进化能力的通用目标检测系统Demo
 
@@ -181,6 +199,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 私部署版：XiYan-SQL（QwenCoder-32B-2504）
 
+**攻擂中**: 寻找攻擂者
+
 **亮点**: 快速搭建一个大模型，通过对话生成SQL脚本
 
 **Metrics**:
@@ -198,6 +218,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 验证中
 
 **擂主**: 私部署版：Coze + GLM 4.7
+
+**攻擂中**: 私部署版：Coze + Kimi K2.5 
 
 **亮点**: 一周基于低代码构建一个具备主动追问与推荐能力的对话式助手Demo
 
@@ -217,6 +239,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 
 **擂主**: 私部署版：LangChain + GLM 4.7
 
+**攻擂中**: 私部署版：LangChain + Kimi K2.5 
+
 **亮点**: 一周低代码构建具备多源数据整合、合规校验、信贷报告一键生成能力的银行智能信贷系统Demo
 
 **Metrics**:
@@ -234,6 +258,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: 验证中
 
 **擂主**: 私部署版：LangChain + GLM 4.7
+
+**攻擂中**: 私部署版：LangChain + Kimi K2.5 
 
 **亮点**: 一周低代码完成单条全国产业链图谱全流程构建
 

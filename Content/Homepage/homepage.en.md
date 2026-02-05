@@ -37,7 +37,7 @@
 
 ### Configuration
 - **Arena Count**: 3
-- **Arena IDs**: 1-intelligent-research-system, business-dashboard-builder, document-review-risk-control
+- **Arena IDs**: 1-intelligent-research-system, 2-business-dashboard-website, 3-document-review-risk-control
 - **Display Fields**: status, title, industry, category, highlights
 
 ## Real-World Testing Section

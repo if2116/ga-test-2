@@ -451,6 +451,106 @@ This checklist covers all aspects we've encountered during development:
   - [ ] Then implement in code
   - [ ] Verify against documented specs
 
+### 6.4 Internationalization (i18n) Code Review ✅ **CRITICAL**
+
+> **Purpose**: Prevent hardcoded Chinese/English text from appearing in the wrong language version.
+>
+> **Common Issue**: Text like "业务亮点" appearing on English pages, or "Business Highlights" on Chinese pages.
+
+- [ ] **No Hardcoded User-Facing Text**
+  - [ ] Search for hardcoded Chinese in components:
+    ```bash
+    grep -n ">.*[一-龟].*<" app/\**/\*.tsx components/\**/\*.tsx
+    ```
+  - [ ] Search for hardcoded English that's user-facing:
+    ```bash
+    grep -n '>[A-Z][A-Za-z\s]{10,}<' app/\**/\*.tsx
+    ```
+  - [ ] All user-facing text MUST use conditional rendering:
+    ```typescript
+    // ✅ CORRECT
+    {locale === 'zh' ? '中文文本' : 'English Text'}
+    {isChina ? '中文文本' : 'English Text'}
+
+    // ❌ WRONG - Hardcoded language
+    <div>业务亮点</div>
+    <div>Business Highlights</div>
+    ```
+  - [ ] **Object properties MUST also use conditional**:
+    ```typescript
+    // ✅ CORRECT
+    const highlights = [
+      {
+        title: isChina ? '中文标题' : 'English Title',
+        description: isChina ? '中文描述' : 'English Description',
+      }
+    ];
+
+    // ❌ WRONG - Hardcoded in object
+    const highlights = [
+      {
+        title: '中文标题',  // Missing conditional!
+        description: '中文描述',
+      }
+    ];
+    ```
+
+- [ ] **Check Common Hardcoded Locations**
+  - [ ] **Card/Section titles**: "业务亮点", "核心价值", "最佳实践", etc.
+  - [ ] **Button text**: "立即开始", "了解更多", "Contact Us", etc.
+  - [ ] **Labels**: "擂主", "攻擂中", "Champion", "Challenger", etc.
+  - [ ] **Status badges**: "已验证", "验证中", "Verified", "Testing", etc.
+  - [ ] **Descriptions**: Any text visible to users
+  - [ ] **Object property values**: Check `title:`, `description:`, `text:`, `label:`, `name:` properties
+    ```bash
+    # Find Chinese in object properties
+    grep -rn "title:\s*['\`"].*[一-龟]" app/ components/ --include="*.tsx"
+    grep -rn "description:\s*['\`"].*[一-龟]" app/ components/ --include="*.tsx"
+    ```
+
+- [ ] **Data Source Fields**
+  - [ ] Arena data in `lib/data.ts` must have both en/zh fields
+  - [ ] Check `title`, `highlights`, `champion`, `challenger` fields
+  - [ ] All data access must use locale selector:
+    ```typescript
+    // ✅ CORRECT
+    {arena.title[locale as keyof typeof arena.title] || arena.title.zh}
+    {isChina ? arena.champion : arena.championEn}
+
+    // ❌ WRONG
+    {arena.title.zh}
+    {arena.champion}
+    ```
+
+- [ ] **Automated i18n Validation Script**
+  - [ ] Run this command to find potential issues:
+    ```bash
+    # Find JSX with hardcoded Chinese (excludes comments/attributes)
+    grep -rn '">[^<]*[一-龟][^<]*<" app/ components/ --include="*.tsx" | \
+      grep -v "//" | \
+      grep -v "locale === 'zh'" | \
+      grep -v "isChina ?"
+    ```
+  - [ ] Review each result - must be either:
+    - Inside a conditional: `locale === 'zh' ? '...' : '...'`
+    - A variable name or technical term
+    - Inside a comment (should be removed from production)
+
+- [ ] **Pre-Commit i18n Checklist**
+  - [ ] All new text added uses locale conditional
+  - [ ] Both English and Chinese translations provided
+  - [ ] No language mixed in UI elements
+  - [ ] Test both `/en/` and `/zh/` routes
+  - [ ] No hardcoded Chinese on English pages
+  - [ ] No hardcoded English on Chinese pages (except technical terms)
+
+- [ ] **Common i18n Bugs to Watch For**
+  - [ ] "业务亮点" appearing on English pages
+  - [ ] "擂主"/"攻擂中" not translated to "Champion"/"Challenger"
+  - [ ] "寻找攻擂者" appearing instead of being filtered out
+  - [ ] Numbers or dates not localized (e.g., "1周" vs "1 week")
+  - [ ] Technical terms mixed with user-facing text without translation
+
 ---
 
 ## 7. Build & Deployment

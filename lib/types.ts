@@ -30,6 +30,8 @@ export interface Arena {
   verificationStatus: string;  // 验证状态：已验证/验证中
   champion: string;      // 本周擂主（技术栈）- 中文
   championEn: string;    // Champion - 英文
+  challenger: string;    // 攻擂中（技术栈）- 中文
+  challengerEn: string;  // Challenger - 英文
   highlights: string;    // 亮点 - 中文
   highlightsEn: string;  // Highlights - 英文
   metrics: Metrics;

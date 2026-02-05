@@ -16,6 +16,7 @@ import {
   Award,
   ArrowRight,
   BarChart3,
+  Star,
 } from 'lucide-react';
 
 interface FrameworkClientProps {
@@ -63,8 +64,8 @@ export default function FrameworkClient({ locale }: FrameworkClientProps) {
         ? '通过Arena机制，我们持续评估和更新最佳实践，确保组织能够获得最新的技术解决方案。'
         : 'Through the Arena mechanism, we continuously evaluate and update best practices to ensure organizations have access to the latest technological solutions.',
       icon: TrendingUp,
-      color: 'bg-amber-500',
-      bgColor: 'bg-amber-50',
+      color: 'bg-yellow-500',
+      bgColor: 'bg-yellow-50',
     },
   ];
 
@@ -73,37 +74,37 @@ export default function FrameworkClient({ locale }: FrameworkClientProps) {
       letter: 'Q',
       name: isChina ? '质量' : 'Quality',
       description: isChina ? '输出的准确性和可靠性' : 'Accuracy and reliability of output',
-      icon: CheckCircle2,
-      color: 'bg-green-500',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200',
+      icon: Star,
+      color: 'bg-yellow-500',
+      bgColor: 'bg-yellow-50',
+      borderColor: 'border-yellow-200',
     },
     {
       letter: 'E',
       name: isChina ? '效率' : 'Efficiency',
       description: isChina ? '处理速度和资源效率' : 'Processing speed and resource efficiency',
       icon: Zap,
-      color: 'bg-blue-500',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200',
+      color: 'bg-violet-500',
+      bgColor: 'bg-violet-50',
+      borderColor: 'border-violet-200',
     },
     {
       letter: 'C',
       name: isChina ? '成本' : 'Cost',
       description: isChina ? '部署和运营的经济可行性' : 'Economic feasibility of deployment and operations',
       icon: DollarSign,
-      color: 'bg-purple-500',
-      bgColor: 'bg-purple-50',
-      borderColor: 'border-purple-200',
+      color: 'bg-blue-500',
+      bgColor: 'bg-blue-50',
+      borderColor: 'border-blue-200',
     },
     {
       letter: 'T',
       name: isChina ? '信任' : 'Trust',
       description: isChina ? '安全性和合规性' : 'Security and compliance',
       icon: Shield,
-      color: 'bg-amber-500',
-      bgColor: 'bg-amber-50',
-      borderColor: 'border-amber-200',
+      color: 'bg-emerald-500',
+      bgColor: 'bg-emerald-50',
+      borderColor: 'border-emerald-200',
     },
   ];
 

@@ -43,7 +43,27 @@
       "Bash(grep:*)",
       "Bash(git restore:*)",
       "Bash(netstat:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(npm run check-i18n:*)",
+      "Bash(tsx:*)",
+      "Bash(if:*)",
+      "Bash(then echo \"Directory exists\")",
+      "Bash(else echo \"Directory does not exist\")",
+      "Bash(git clone:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git diff:*)",
+      "Bash(git checkout:*)",
+      "Bash(tasklist:*)",
+      "Bash(cmd:*)",
+      "Bash(npm --version)",
+      "Bash(then echo \"Dependencies installed\")",
+      "Bash(else echo \"Need to install dependencies\")",
+      "Bash(kill:*)",
+      "Bash(awk:*)",
+      "Bash(tr:*)",
+      "Bash(fold:*)",
+      "Bash(arena)",
+      "Bash(faq)"
     ]
   }
 }

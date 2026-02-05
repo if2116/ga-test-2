@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "sync-content": "tsx scripts/sync-content.ts",
-    "sync-arena-list": "tsx scripts/sync-arena-list.ts"
+    "sync-arena-list": "tsx scripts/sync-arena-list.ts",
+    "check-i18n": "tsx scripts/check-i18n.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

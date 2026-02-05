@@ -10,20 +10,18 @@ const OUTPUT_EN_MD = path.join(process.cwd(), 'Content/Arena/page.en.md');
 const OUTPUT_DATA_TS = path.join(process.cwd(), 'lib/data.ts');
 
 interface ArenaRow {
-  __EMPTY: number | string;  // 列A - 空
-  __EMPTY_1: number | string;  // 列B - 擂台编号
-  __EMPTY_2: string;  // 列C - 擂台名称
-  __EMPTY_3: string;  // 列D - 本周擂主
-  __EMPTY_4: string;  // 列E - 验证状态（新增列）
-  __EMPTY_5: string;  // 列F - 亮点
-  __EMPTY_6: string;  // 列G - 行业类别
-  __EMPTY_7: string;  // 列H - 应用类别
-  __EMPTY_8: string;  // 列I - 简要描述
-  __EMPTY_9: string;  // 列J - 技术类别
-  __EMPTY_10: string;  // 列K - 速度
-  __EMPTY_11: string;  // 列L - 质量
-  __EMPTY_12: string;  // 列M - 安全
-  __EMPTY_13: string;  // 列N - 成本
+  __EMPTY: number | string;  // 擂台编号
+  __EMPTY_1: string;  // 擂台名称
+  __EMPTY_2: string;  // 本周擂主
+  __EMPTY_3: string;  // 验证状态
+  __EMPTY_4: string;  // 亮点
+  __EMPTY_5: string;  // 行业类别
+  __EMPTY_6: string;  // 应用类别
+  __EMPTY_7: string;  // 速度
+  __EMPTY_8: string;  // 质量
+  __EMPTY_9: string;  // 安全
+  __EMPTY_10: string;  // 成本
+  __EMPTY_11: string;  // 攻擂中
 }
 
 interface ArenaData {
@@ -36,6 +34,8 @@ interface ArenaData {
   industryEn: string; // 英文
   champion: string; // 本周擂主
   championEn: string; // Champion (English)
+  challenger: string; // 攻擂中
+  challengerEn: string; // Challenger (English)
   highlights: string;
   highlightsEn: string; // Highlights (English)
   metrics: {
@@ -94,8 +94,19 @@ const championPrefixMap: Record<string, string> = {
   '云端版：': 'Cloud Version: ',
 };
 
+// Special challenger translations
+const challengerMap: Record<string, string> = {
+  '寻找攻擂者': 'Looking for Challengers',
+  '暂无': 'None',
+};
+
 // Translate champion
 function translateChampion(champion: string): string {
+  // First check if it's a special challenger value
+  if (challengerMap[champion]) {
+    return challengerMap[champion];
+  }
+
   let result = champion;
   for (const [cn, en] of Object.entries(championPrefixMap)) {
     result = result.replace(cn, en);
@@ -248,14 +259,15 @@ function generateArenaId(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-// Generate folder ID from English title (kebab-case, used for file paths)
-function generateFolderId(englishTitle: string): string {
+// Generate folder ID from Chinese title (used for file paths)
+function generateFolderId(chineseTitle: string): string {
   // First check if there's a manual mapping
-  if (folderIdMap[englishTitle]) {
-    return folderIdMap[englishTitle];
+  if (folderIdMap[chineseTitle]) {
+    return folderIdMap[chineseTitle];
   }
 
-  // Fallback to auto-generate kebab-case ID
+  // Fallback to auto-generate kebab-case ID from English title
+  const englishTitle = generateEnglishTitle(chineseTitle);
   return englishTitle
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
@@ -263,51 +275,71 @@ function generateFolderId(englishTitle: string): string {
     .replace(/-+-+/g, '-'); // Clean up multiple dashes
 }
 
-// Folder ID mapping (English title to actual folder name)
+// Folder ID mapping (Chinese title to actual folder name)
 const folderIdMap: Record<string, string> = {
-  '1-Week Build: Enterprise-Level Intelligent Research Report Generation System Demo': '1-intelligent-research-system',
-  '2-Day Build: Business Dashboard & Website Demo': '2-business-dashboard-website',
-  '1-Week Build: Document Review & Risk Control Demo': '3-document-review-risk-control',
-  '2.5-Day Build: Enterprise-Level Demo Video': '4-demo-video',
-  '1-Week Build: Educational App for Children Demo': '5-educational-app-children',
-  '1-Week Build: Long-Term Time Series Forecasting System Demo (Energy)': '6-time-series-forecasting-energy',
-  '1-Week Build: Intelligent Document Translation System Demo': '7-document-translation',
-  '1-Day Build: Multi-Contract Cross-Validation Intelligent Contract Legal Review System Demo': '8-contract-legal-review',
-  '1-Week Build: High-Precision Universal Object Detection System Demo (Energy & Agriculture)': '9-object-detection',
-  'Universal Practice of SQL Language Intelligent Generation (NL2SQL)': '10-nl2sql',
-  '1-Week Build: Conversational Feature Recommendation Assistant Demo (AI)': '11-feature-recommendation',
-  '1-Week Build: Intelligent Credit Report Generation System Demo': '12-credit-report',
-  '1-Week Build: Single National Industrial Chain Graph': '13-industrial-chain',
+  '智能调研报告生成': '1-intelligent-research-system',
+  '业务看板搭建': '2-business-dashboard-website',
+  '文档审核与风控': '3-document-review-risk-control',
+  '企业演示视频': '', // No content folder
+  '儿童教育趣味应用': '5-educational-app-children',
+  '长时间序列预测系统': '6-time-series-forecasting-energy',
+  '智能文档翻译系统': '7-document-translation',
+  '智能合同法审系统': 'intelligent-system',
+  '通用目标检测系统': 'system',
+  'SQL语言智能生成': '10-nl2sql',
+  '功能推荐助手': '', // No content folder
+  '智能信贷报告生成系统': '12-credit-report',
+  '单条产业链图谱': 'single',
 };
 
 // Generate natural English translation from Chinese title (sentence-level translation)
 function generateEnglishTitle(chineseTitle: string): string {
   // Complete title translations (by ID pattern matching)
   const titleTranslations: Record<string, string> = {
-    '一周搭建企业级智能调研报告生成系统Demo': '1-Week Build: Enterprise-Level Intelligent Research Report Generation System Demo',
-    '一周搭建企业级智能调研报告生成系统demo': '1-Week Build: Enterprise-Level Intelligent Research Report Generation System Demo',
-    '两天搭建业务看板及网站Demo': '2-Day Build: Business Dashboard & Website Demo',
-    '两天搭建业务看板及网站demo': '2-Day Build: Business Dashboard & Website Demo',
-    '一周搭建文档审核与风控Demo': '1-Week Build: Document Review & Risk Control Demo',
-    '一周搭建文档审核与风控demo': '1-Week Build: Document Review & Risk Control Demo',
-    '两天半搭建企业级简要演示视频': '2.5-Day Build: Enterprise-Level Demo Video',
-    '一周搭建儿童教育趣味应用Demo': '1-Week Build: Educational App for Children Demo',
-    '一周搭建儿童教育趣味应用demo': '1-Week Build: Educational App for Children Demo',
-    '一周搭建长时间序列预测系统Demo（能源领域）': '1-Week Build: Long-Term Time Series Forecasting System Demo (Energy)',
-    '一周搭建长时间序列预测系统demo-能源领域': '1-Week Build: Long-Term Time Series Forecasting System Demo (Energy)',
-    '一周搭建智能文档翻译系统Demo': '1-Week Build: Intelligent Document Translation System Demo',
-    '一周搭建智能文档翻译系统demo': '1-Week Build: Intelligent Document Translation System Demo',
-    '一天构建一个多合同交叉校验的智能合同法审系统Demo': '1-Day Build: Multi-Contract Cross-Validation Intelligent Contract Legal Review System Demo',
-    '一天构建一个多合同交叉校验的智能合同法审系统demo': '1-Day Build: Multi-Contract Cross-Validation Intelligent Contract Legal Review System Demo',
-    '一周搭建高精度通用目标检测系统Demo（能源&农林领域）': '1-Week Build: High-Precision Universal Object Detection System Demo (Energy & Agriculture)',
-    '一周搭建高精度通用目标检测系统demo-能源-农林领域': '1-Week Build: High-Precision Universal Object Detection System Demo (Energy & Agriculture)',
+    // Short titles from Excel "擂台名称" column (without "X-Week Build:" prefix)
+    '智能调研报告生成': 'Enterprise-Level Intelligent Research Report Generation System Demo',
+    '业务看板搭建': 'Business Dashboard & Website Demo',
+    '文档审核与风控': 'Document Review & Risk Control Demo',
+    '企业演示视频': 'Enterprise Demo Video',
+    '儿童教育趣味应用': 'Educational App for Children Demo',
+    '长时间序列预测系统': 'Long-Term Time Series Forecasting System Demo (Energy)',
+    '智能文档翻译系统': 'Intelligent Document Translation System Demo',
+    '智能合同法审系统': 'Intelligent Contract Legal Review System Demo',
+    '通用目标检测系统': 'Universal Object Detection System Demo',
+    'SQL语言智能生成': 'Universal Practice of SQL Language Intelligent Generation (NL2SQL)',
+    '功能推荐助手': 'Feature Recommendation Assistant Demo',
+    '智能信贷报告生成系统': 'Intelligent Credit Report Generation System Demo',
+    '单条产业链图谱': 'Single Industrial Chain Graph',
+    // Long titles (for backward compatibility)
+    '一周搭建企业级智能调研报告生成系统Demo': 'Enterprise-Level Intelligent Research Report Generation System Demo',
+    '一周搭建企业级智能调研报告生成系统demo': 'Enterprise-Level Intelligent Research Report Generation System Demo',
+    '两天搭建业务看板及网站Demo': 'Business Dashboard & Website Demo',
+    '两天搭建业务看板及网站demo': 'Business Dashboard & Website Demo',
+    '一周搭建文档审核与风控Demo': 'Document Review & Risk Control Demo',
+    '一周搭建文档审核与风控demo': 'Document Review & Risk Control Demo',
+    '演示视频生成': 'Enterprise Demo Video',
+    '两天半搭建企业级简要演示视频': 'Enterprise Demo Video',
+    '一周搭建儿童教育趣味应用Demo': 'Educational App for Children Demo',
+    '一周搭建儿童教育趣味应用demo': 'Educational App for Children Demo',
+    '一周搭建长时间序列预测系统Demo（能源领域）': 'Long-Term Time Series Forecasting System Demo (Energy)',
+    '一周搭建长时间序列预测系统demo-能源领域': 'Long-Term Time Series Forecasting System Demo (Energy)',
+    '一周搭建智能文档翻译系统Demo': 'Intelligent Document Translation System Demo',
+    '一周搭建智能文档翻译系统demo': 'Intelligent Document Translation System Demo',
+    '多合同交叉校验的智能合同法审系统': 'Intelligent Contract Legal Review System Demo',
+    '一天构建一个多合同交叉校验的智能合同法审系统Demo': 'Intelligent Contract Legal Review System Demo',
+    '一天构建一个多合同交叉校验的智能合同法审系统demo': 'Intelligent Contract Legal Review System Demo',
+    '高精度通用目标检测系统': 'Universal Object Detection System Demo',
+    '一周搭建高精度通用目标检测系统Demo（能源&农林领域）': 'Universal Object Detection System Demo',
+    '一周搭建高精度通用目标检测系统demo-能源-农林领域': 'Universal Object Detection System Demo',
     'SQL语言智能生成(NL2SQL)的通用实践': 'Universal Practice of SQL Language Intelligent Generation (NL2SQL)',
     'sql语言智能生成-nl2sql-的通用实践': 'Universal Practice of SQL Language Intelligent Generation (NL2SQL)',
-    '一周搭建对话式功能推荐助手Demo（AI领域）': '1-Week Build: Conversational Feature Recommendation Assistant Demo (AI)',
-    '一周搭建对话式功能推荐助手demo-ai领域': '1-Week Build: Conversational Feature Recommendation Assistant Demo (AI)',
-    '一周构建智能信贷报告生成系统Demo': '1-Week Build: Intelligent Credit Report Generation System Demo',
-    '一周构建智能信贷报告生成系统demo': '1-Week Build: Intelligent Credit Report Generation System Demo',
-    '一周构建单条全国产业链图谱': '1-Week Build: Single National Industrial Chain Graph',
+    '对话式功能推荐助手': 'Feature Recommendation Assistant Demo',
+    '一周搭建对话式功能推荐助手Demo（AI领域）': 'Feature Recommendation Assistant Demo',
+    '一周搭建对话式功能推荐助手demo-ai领域': 'Feature Recommendation Assistant Demo',
+    '一周构建智能信贷报告生成系统Demo': 'Intelligent Credit Report Generation System Demo',
+    '一周构建智能信贷报告生成系统demo': 'Intelligent Credit Report Generation System Demo',
+    '全国产业链图谱': 'Single Industrial Chain Graph',
+    '一周构建单条全国产业链图谱': 'Single Industrial Chain Graph',
   };
 
   // Return exact translation if exists
@@ -360,7 +392,7 @@ function readExcelData(): ArenaData[] {
   const arenas: ArenaData[] = [];
 
   for (const row of dataRows) {
-    // Skip empty rows
+    // Skip rows without 擂台编号 (must be a number)
     if (typeof row.__EMPTY !== 'number') {
       continue;
     }
@@ -376,13 +408,19 @@ function readExcelData(): ArenaData[] {
 
     const chineseTitle = String(row.__EMPTY_1);
     const championRaw = String(row.__EMPTY_2 || '');
+    const challengerRaw = String(row.__EMPTY_11 || ''); // 攻擂中技术栈
     const highlightsRaw = String(row.__EMPTY_4 || '');
 
     const englishTitle = generateEnglishTitle(chineseTitle);
 
+    // Check if arena has content directory
+    const folderId = generateFolderId(chineseTitle);
+    const contentDirPath = path.join(process.cwd(), 'Content', 'Arena', 'All Arenas', folderId);
+    const hasContent = fs.existsSync(contentDirPath);
+
     const arena: ArenaData = {
       id: generateArenaId(chineseTitle),
-      folderId: generateFolderId(englishTitle), // 使用英文标题生成文件夹ID
+      folderId: folderId,
       title: {
         zh: chineseTitle,
         en: englishTitle,
@@ -393,6 +431,8 @@ function readExcelData(): ArenaData[] {
       industryEn: translateIndustry(industry),
       champion: championRaw,
       championEn: translateChampion(championRaw),
+      challenger: challengerRaw,
+      challengerEn: translateChampion(challengerRaw),
       highlights: highlightsRaw,
       highlightsEn: translateHighlights(highlightsRaw),
       metrics: {
@@ -403,6 +443,7 @@ function readExcelData(): ArenaData[] {
       },
       status: String(row.__EMPTY_3) === '已验证' ? 'verified' : 'in-arena',
       verificationStatus: String(row.__EMPTY_3 || ''),
+      hasContent: hasContent,
     };
 
     arenas.push(arena);
@@ -436,6 +477,8 @@ pageSubtitle: 为您的场景找到AI最佳实践
 **验证状态**: ${arena.verificationStatus}
 
 **擂主**: ${arena.champion}
+
+**攻擂中**: ${arena.challenger || '暂无'}
 
 **亮点**: ${arena.highlights}
 
@@ -493,6 +536,8 @@ pageSubtitle: Find the ONE AI Best Practice for your Scenario
 **Verification Status**: ${verificationStatusMap[arena.verificationStatus] || arena.verificationStatus}
 
 **Champion**: ${translateChampion(arena.champion)}
+
+**Challenger**: ${arena.challenger ? translateChampion(arena.challenger) : 'None'}
 
 **Highlights**: ${translateHighlights(arena.highlights)}
 
@@ -554,6 +599,8 @@ ${arenas.map(arena => `  {
     verificationStatus: '${arena.verificationStatus}',
     champion: '${arena.champion.replace(/'/g, "\\'")}',
     championEn: '${arena.championEn.replace(/'/g, "\\'")}',
+    challenger: '${(arena.challenger || '').replace(/'/g, "\\'")}',
+    challengerEn: '${(arena.challengerEn || '').replace(/'/g, "\\'")}',
     highlights: '${arena.highlights.replace(/'/g, "\\'")}',
     highlightsEn: '${arena.highlightsEn.replace(/'/g, "\\'")}',
     metrics: {
@@ -562,6 +609,7 @@ ${arenas.map(arena => `  {
       security: '${arena.metrics.security}',
       cost: '${arena.metrics.cost}',
     },
+    hasContent: ${arena.hasContent ? 'true' : 'false'},
   }`).join(',\n')}
 ];
 `;

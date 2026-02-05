@@ -21,7 +21,6 @@ __Participants__
 1. Proficient in using various chain-of-thought strategies, familiar with cutting-edge and popular open/closed source LLM resources, with own usage experience, summaries, and insights
 2. Proficient in NLP classic deep learning models (such as Transformer series, LLaMA series, GLM series, etc.) and related resources (websites, libraries, blogs, etc.); master at least one common deep learning development framework, such as PyTorch; maintain continuous attention and interest in the working principles and latest news of large-scale generative language models (LLMs) after GPT-3.5
 3. Proficient in Python language, able to use basic regular expressions and command-line scripts; familiar with NLP basic concepts and classic tasks (classification, matching, sequence labeling, generation, etc.); able to skillfully use common NLP open-source libraries (HanLP, LTP, Jieba, etc.)
-4. Proactive attitude, organized communication, curious and self-driven; can ensure working hours and attendance
 
 - Role Quantity: 1 person
 
@@ -315,7 +314,6 @@ __Participants__
 1. Proficient in using various chain-of-thought strategies, familiar with cutting-edge and popular open/closed source LLM resources, with own usage experience, summaries, and insights
 2. Proficient in NLP classic deep learning models (such as Transformer series, LLaMA series, GLM series, etc.) and related resources (websites, libraries, blogs, etc.); master at least one common deep learning development framework, such as PyTorch; maintain continuous attention and interest in the working principles and latest news of large-scale generative language models (LLMs) after GPT-3.5
 3. Proficient in Python language, able to use basic regular expressions and command-line scripts; familiar with NLP basic concepts and classic tasks (classification, matching, sequence labeling, generation, etc.); able to skillfully use common NLP open-source libraries (HanLP, LTP, Jieba, etc.)
-4. Proactive attitude, organized communication, curious and self-driven; can ensure working hours and attendance
 
 - Role Quantity: 1 person
 
