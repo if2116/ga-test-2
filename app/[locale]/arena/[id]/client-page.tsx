@@ -35,6 +35,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css';
 import { motion } from 'framer-motion';
+import { withBasePath } from '@/lib/paths';
 
 type TabType = 'overview' | 'implementation' | 'tech-configuration';
 
@@ -295,7 +296,10 @@ export function ArenaDetailClient({ arena, locale, arenaId, initialContent, hasC
                     loop
                     playsInline
                   >
-                    <source src={'/videos/' + (arena.videoFile || arena.folderId + '.mp4')} type="video/mp4" />
+                    <source
+                      src={withBasePath('/videos/' + (arena.videoFile || arena.folderId + '.mp4'))}
+                      type="video/mp4"
+                    />
                     {locale === 'zh' ? '您的浏览器不支持视频播放' : 'Your browser does not support the video tag.'}
                   </video>
                 </div>
@@ -1995,4 +1999,3 @@ function TechConfigurationSection({ content, locale }: { content: string; locale
     </div>
   );
 }
-
